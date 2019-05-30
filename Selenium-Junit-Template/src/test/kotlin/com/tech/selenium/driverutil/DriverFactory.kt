@@ -9,6 +9,9 @@ import org.openqa.selenium.ie.InternetExplorerDriver
 import org.openqa.selenium.opera.OperaDriver
 import java.util.concurrent.TimeUnit
 
+/**
+ * Created by Sridhar Bandi on 30/05/19.
+ */
 object DriverFactory {
 
     val browser: WebDriver

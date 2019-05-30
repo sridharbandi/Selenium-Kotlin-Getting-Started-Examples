@@ -9,6 +9,9 @@ import org.junit.Before
 import org.junit.Test
 import org.openqa.selenium.WebDriver
 
+/**
+ * Created by Sridhar Bandi on 30/05/19.
+ */
 class RunTest {
 
     private var driver: WebDriver? = null

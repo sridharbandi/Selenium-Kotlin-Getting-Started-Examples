@@ -1,0 +1,46 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.kotlin.jvm' version '1.3.11'
+}
+
+group 'com.tech.selenium'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+ext {
+    seleniumVersion = '3.141.59'
+    webdrivermanagerVersion = '3.2.0'
+    testngVersion = '7.0.0-beta3'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    compile "org.seleniumhq.selenium:selenium-java:${seleniumVersion}"
+    compile "io.github.bonigarcia:webdrivermanager:${webdrivermanagerVersion}"
+    testCompile "org.testng:testng:${testngVersion}"
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+test {
+    useTestNG(){
+        useDefaultListeners = true
+        //To execute with testng xml uncomment below lin
+        //suites 'src/test/resources/testng.xml'
+    }
+    systemProperties System.properties
+    dependsOn 'cleanTest'
+}
+
+gradle.startParameter.continueOnFailure = true

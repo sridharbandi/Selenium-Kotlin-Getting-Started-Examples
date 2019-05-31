@@ -1,4 +1,8 @@
-
+/.idea/
 /gradle.properties
 /Selenium-Junit-Template/build/
 /Selenium-Junit-Template/.gradle/
+/Selenium-Junit-Template/target/
+/Selenium-Testng-Template/.gradle/
+/Selenium-Testng-Template/build/
+/Selenium-Testng-Template/target/

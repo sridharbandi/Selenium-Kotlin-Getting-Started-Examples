@@ -1,4 +1,4 @@
-Feature: Selenium Cucumber Java Example
+Feature: Selenium Cucumber Kotlin TestNG Example
 
   Scenario: Google search
     Given User is on Google search page

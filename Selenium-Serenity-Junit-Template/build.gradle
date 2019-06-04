@@ -1,0 +1,61 @@
+buildscript {
+    ext {
+        serenity_version = "2.0.39"
+    }
+    repositories {
+        mavenLocal()
+        jcenter()
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:${serenity_version}")
+    }
+}
+
+plugins {
+    id 'java'
+    id 'org.jetbrains.kotlin.jvm' version '1.3.11'
+}
+
+group 'com.tech.selenium'
+version '1.0-SNAPSHOT'
+
+apply plugin: "net.serenity-bdd.aggregator"
+
+sourceCompatibility = 1.8
+
+ext {
+    serenity_version = "2.0.39"
+    junit_version = "4.12"
+    webdrivermanager_version = '3.2.0'
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    compile "net.serenity-bdd:serenity-core:${serenity_version}"
+    compile "net.serenity-bdd:serenity-junit:${serenity_version}"
+    compile "io.github.bonigarcia:webdrivermanager:${webdrivermanager_version}"
+    testCompile "junit:junit:${junit_version}"
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+test {
+    testLogging {
+        showStandardStreams = true
+    }
+    /* Pass all system properties: */
+    systemProperties System.getProperties()
+    dependsOn 'cleanTest'
+}
+
+gradle.startParameter.continueOnFailure = true

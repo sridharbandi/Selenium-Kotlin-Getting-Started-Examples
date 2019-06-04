@@ -22,7 +22,7 @@ class RunTest {
     internal var searchSteps: SearchSteps? = null
 
     @Test
-    fun testExample() {
+    fun searchGoogle() {
         searchSteps!!.openURL()
         searchSteps!!.searchFor("Selenium")
         Assert.assertTrue(searchSteps!!.seleniumLinkPresent())

@@ -14,17 +14,17 @@ open class SearchSteps : ScenarioSteps() {
     internal var searchResultsPage: SearchResultsPage? = null
 
     @Step
-    fun openURL() {
+    open fun openURL() {
         googleSearchPage!!.open()
     }
 
     @Step
-    fun searchFor(searchterm: String) {
+    open fun searchFor(searchterm: String) {
         googleSearchPage!!.searchFor(searchterm)
     }
 
     @Step
-    fun seleniumLinkPresent(): Boolean {
+    open fun seleniumLinkPresent(): Boolean {
         return searchResultsPage!!.seleniumResultPresent()
     }
 }

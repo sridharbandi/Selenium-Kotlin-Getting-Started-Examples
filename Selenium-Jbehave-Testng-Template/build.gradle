@@ -1,0 +1,42 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.3.31'
+}
+
+group 'com.tech.selenium'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+ext {
+    seleniumVersion = '3.141.59'
+    webdrivermanagerVersion = '3.2.0'
+    jbehaveVersion = '4.3.5'
+    testngversion = '6.14.3'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    compile "org.seleniumhq.selenium:selenium-java:${seleniumVersion}"
+    compile "io.github.bonigarcia:webdrivermanager:${webdrivermanagerVersion}"
+    compile "org.jbehave:jbehave-core:${jbehaveVersion}"
+    testCompile "org.testng:testng:${testngversion}"
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+test {
+    systemProperties System.properties
+    dependsOn 'cleanTest'
+}
+
+gradle.startParameter.continueOnFailure = true

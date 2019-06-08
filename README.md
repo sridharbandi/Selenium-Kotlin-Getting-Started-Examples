@@ -11,5 +11,6 @@
   7. [Selenium Serenity Junit Template](https://github.com/sridharbandi/Selenium-Kotlin-Getting-Started-Examples/tree/master/Selenium-Serenity-Junit-Template)
   8. [Selenium Serenity Cucumber Template](https://github.com/sridharbandi/Selenium-Kotlin-Getting-Started-Examples/tree/master/Selenium-Serenity-Cucumber-Template)
   9. [Selenium Serenity Jbehave Template](https://github.com/sridharbandi/Selenium-Kotlin-Getting-Started-Examples/tree/master/Selenium-Serenity-Jbehave-Template)
+ 10. [Selenium Selenide Junit Template](https://github.com/sridharbandi/Selenium-Kotlin-Getting-Started-Examples/tree/master/Selenium-Selenide-Junit-Template)
   
 > If you looking for template which is not in above list, drop me [mail](mailto:sridhar.bandi.ece@gmail.com). I can create it for you.
